@@ -1,2 +1,3 @@
-# game-of-life
-The Game of life on Go
+# The Game of life on Go
+
+### Author: _Baran Pavlo_
