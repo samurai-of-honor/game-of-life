@@ -11,11 +11,4 @@ func main() {
 
 	randomUn := core.GenerateRandomUniverse(width-1, height-2)
 	randomUn.EvolveInf(200)
-
-	// inputStr := core.ReadFile("./cmd/startUniverse.txt")
-	// nTimes, universe := data.ParseInput(inputStr)
-
-	// universe.EvolveVisual(nTimes)
-	// finalUniverse := universe.Evolve(nTimes)
-	// data.WriteFile(finalUniverse)
 }
