@@ -1,4 +1,4 @@
-module ip-0x-lab-1-samurai-of-honor
+module github.com/samurai-of-honor/game-of-life
 
 go 1.18
 

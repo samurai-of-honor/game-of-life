@@ -1,7 +1,7 @@
 package main
 
 import (
-	"ip-0x-lab-1-samurai-of-honor/internal/data"
+	"github.com/samurai-of-honor/game-of-life/internal/data"
 )
 
 func main() {

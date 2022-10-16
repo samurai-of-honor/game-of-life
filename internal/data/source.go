@@ -1,9 +1,9 @@
 package data
 
 import (
+	"github.com/samurai-of-honor/game-of-life/internal/core"
 	"io"
 	"io/ioutil"
-	"ip-0x-lab-1-samurai-of-honor/internal/core"
 	"os"
 )
 

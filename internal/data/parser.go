@@ -1,12 +1,13 @@
 package data
 
 import (
-	"ip-0x-lab-1-samurai-of-honor/internal/core"
+	"github.com/samurai-of-honor/game-of-life/internal/core"
 	"strconv"
 	"strings"
 )
 
 func ParseInput(str string) (int, core.Universe) {
+	str = strings.ReplaceAll(str, "\r", "")
 	lines := strings.Split(str, "\n")
 	iteration, _ := strconv.Atoi(lines[0])
 
