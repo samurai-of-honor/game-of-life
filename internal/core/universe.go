@@ -1,6 +1,10 @@
 package core
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+	"time"
+)
 
 type Universe [][]bool
 
@@ -67,21 +71,45 @@ func (u Universe) Evolve(nTimes int) Universe {
 	return u
 }
 
-func (u Universe) ToString() string {
+func (u Universe) EvolveVisual(nTimes int) {
+	for i := 0; i < nTimes; i++ {
+		u = u.NextStep()
+		fmt.Println(u.ToStringVisual())
+		time.Sleep(time.Millisecond * 250)
+	}
+}
+
+func (u Universe) EvolveInf(milliSecs time.Duration) {
+	for {
+		u = u.NextStep()
+		fmt.Println(u.ToStringVisual())
+		time.Sleep(time.Millisecond * milliSecs)
+	}
+}
+
+func (u Universe) universeToString(livingCells, deadCells string) string {
 	var resultStr string
 
 	for _, line := range u {
 		for _, cell := range line {
 			if cell == true {
-				resultStr += "x"
+				resultStr += livingCells
 			} else {
-				resultStr += "."
+				resultStr += deadCells
 			}
 		}
 		resultStr += "\n"
 	}
 
 	return resultStr
+}
+
+func (u Universe) ToString() string {
+	return u.universeToString("x", ".")
+}
+
+func (u Universe) ToStringVisual() string {
+	return u.universeToString("x", " ")
 }
 
 func ParseUniverse(str string) Universe {
