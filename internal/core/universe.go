@@ -74,15 +74,15 @@ func (u Universe) Evolve(nTimes int) Universe {
 func (u Universe) EvolveVisual(nTimes int) {
 	for i := 0; i < nTimes; i++ {
 		u = u.NextStep()
-		fmt.Println(u.ToStringVisual())
+		fmt.Println(u.ToStringVisual(), "Generation:", i+1)
 		time.Sleep(time.Millisecond * 250)
 	}
 }
 
 func (u Universe) EvolveInf(milliSecs time.Duration) {
-	for {
+	for i := 0; ; i++ {
 		u = u.NextStep()
-		fmt.Println(u.ToStringVisual())
+		fmt.Println(u.ToStringVisual(), "Generation:", i+1)
 		time.Sleep(time.Millisecond * milliSecs)
 	}
 }
@@ -109,7 +109,7 @@ func (u Universe) ToString() string {
 }
 
 func (u Universe) ToStringVisual() string {
-	return u.universeToString("x", " ")
+	return u.universeToString("#", " ")
 }
 
 func ParseUniverse(str string) Universe {
