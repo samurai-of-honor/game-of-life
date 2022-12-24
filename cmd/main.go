@@ -10,5 +10,5 @@ func main() {
 	width, height, _ := terminal.GetSize(int(os.Stdout.Fd()))
 
 	randomUn := core.GenerateRandomUniverse(width-1, height-2)
-	randomUn.EvolveInf(200)
+	randomUn.EvolveVisualInf(200)
 }

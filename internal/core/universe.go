@@ -79,7 +79,7 @@ func (u Universe) EvolveVisual(nTimes int) {
 	}
 }
 
-func (u Universe) EvolveInf(milliSecs time.Duration) {
+func (u Universe) EvolveVisualInf(milliSecs time.Duration) {
 	for i := 0; ; i++ {
 		u = u.NextStep()
 		fmt.Println(u.ToStringVisual(), "Generation:", i+1)
