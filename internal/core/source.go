@@ -30,6 +30,6 @@ func ReadFile(inputFile string) string {
 }
 
 func WriteFile(finalUniverse Universe) {
-	_ = os.Mkdir("out", 0777)
-	_ = ioutil.WriteFile("./out/finalUniverse.txt", []byte(finalUniverse.ToString()), 0777)
+	_ = os.Mkdir("out", 0755)
+	_ = ioutil.WriteFile("./out/finalUniverse.txt", []byte(finalUniverse.ToString()), 0644)
 }
